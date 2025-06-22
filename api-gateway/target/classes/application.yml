@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+
+
+  cloud:
+    gateway:
+      routes:
+        - id: farmer-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/farmer/**
+        - id: order-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/order/**
+        - id: payment-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/payment/**
+        - id: input-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/input/**
+        - id: extension-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/extension/**
+        - id: notification-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/notification/**
+        - id: auth-service
+          uri: http://localhost:8087
+          predicates:
+            - Path=/auth/**
+        -

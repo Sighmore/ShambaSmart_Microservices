@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ShambaSmart_MicroServices.iml" filepath="$PROJECT_DIR$/.idea/ShambaSmart_MicroServices.iml" />
-      <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/input-service/src/main/main.iml" filepath="$PROJECT_DIR$/input-service/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/farmer-service/src/main/main2.iml" filepath="$PROJECT_DIR$/farmer-service/src/main/main2.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification-service/src/main/main3.iml" filepath="$PROJECT_DIR$/notification-service/src/main/main3.iml" />
@@ -12,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/auth-service/src/main/main6.iml" filepath="$PROJECT_DIR$/auth-service/src/main/main6.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-service/src/main/main7.iml" filepath="$PROJECT_DIR$/order-service/src/main/main7.iml" />
       <module fileurl="file://$PROJECT_DIR$/extension-service/src/main/main8.iml" filepath="$PROJECT_DIR$/extension-service/src/main/main8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shambasmart-microservices.iml" filepath="$PROJECT_DIR$/shambasmart-microservices.iml" />
       <module fileurl="file://$PROJECT_DIR$/input-service/src/test/test.iml" filepath="$PROJECT_DIR$/input-service/src/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-service/src/test/test2.iml" filepath="$PROJECT_DIR$/order-service/src/test/test2.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment-service/src/test/test3.iml" filepath="$PROJECT_DIR$/payment-service/src/test/test3.iml" />

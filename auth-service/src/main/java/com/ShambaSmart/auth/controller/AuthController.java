@@ -1,6 +1,6 @@
 package com.ShambaSmart.ShambaSmart.controller;
 
-import com.ShambaSmart.ShambaSmart.jwt.JwtUtils;
+import com.ShambaSmart.payment.jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;

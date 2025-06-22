@@ -1,7 +1,7 @@
 package com.ShambaSmart.ShambaSmart.mapper;
 
-import com.ShambaSmart.ShambaSmart.dto.farmerDto;
-import com.ShambaSmart.ShambaSmart.model.Farmer;
+import com.ShambaSmart.payment.dto.farmerDto;
+import com.ShambaSmart.payment.model.Farmer;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,5 +1,6 @@
 package com.ShambaSmart.ShambaSmart;
 
+import com.ShambaSmart.config.ConfigServiceApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

@@ -1,9 +1,9 @@
 package com.ShambaSmart.ShambaSmart.controller;
 
-import com.ShambaSmart.ShambaSmart.dto.farmerDto;
-import com.ShambaSmart.ShambaSmart.model.ApiResponse;
-import com.ShambaSmart.ShambaSmart.model.Farmer;
-import com.ShambaSmart.ShambaSmart.service.FarmerService;
+import com.ShambaSmart.payment.dto.farmerDto;
+import com.ShambaSmart.payment.model.ApiResponse;
+import com.ShambaSmart.payment.model.Farmer;
+import com.ShambaSmart.payment.service.FarmerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

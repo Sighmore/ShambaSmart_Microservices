@@ -1,6 +1,6 @@
 package com.ShambaSmart.ShambaSmart.service;
 
-import com.ShambaSmart.ShambaSmart.repository.UserRepository;
+import com.ShambaSmart.payment.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

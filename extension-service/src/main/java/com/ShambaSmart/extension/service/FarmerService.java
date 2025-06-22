@@ -1,10 +1,10 @@
 package com.ShambaSmart.ShambaSmart.service;
 
 
-import com.ShambaSmart.ShambaSmart.dto.farmerDto;
-import com.ShambaSmart.ShambaSmart.mapper.FarmerMapper;
-import com.ShambaSmart.ShambaSmart.model.Farmer;
-import com.ShambaSmart.ShambaSmart.repository.FarmerRepository;
+import com.ShambaSmart.payment.dto.farmerDto;
+import com.ShambaSmart.payment.mapper.FarmerMapper;
+import com.ShambaSmart.payment.model.Farmer;
+import com.ShambaSmart.payment.repository.FarmerRepository;
 import jakarta.validation.Valid;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class FarmerService {
 
     // Logger for logging information: SLF4J is used for logging in this service class
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(FarmerService.class);
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(com.ShambaSmart.payment.service.FarmerService.class);
 
     // DI of the FarmerRepository and FarmerMapper classes
     private final FarmerRepository farmerRepository;

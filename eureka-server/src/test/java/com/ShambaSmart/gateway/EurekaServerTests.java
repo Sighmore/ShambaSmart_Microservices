@@ -1,10 +1,10 @@
-package com.ShambaSmart.ShambaSmart;
+package com.ShambaSmart.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ShambaSmartApplicationTests {
+class EurekaServerTests {
 
 	@Test
 	void contextLoads() {

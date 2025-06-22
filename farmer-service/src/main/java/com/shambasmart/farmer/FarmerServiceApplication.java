@@ -1,6 +1,5 @@
-package com.ShambaSmart.ShambaSmart;
+package com.shambasmart.farmer;
 
-import com.ShambaSmart.config.ConfigServiceApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FarmerServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConfigServiceApplication.class, args);
+		SpringApplication.run(FarmerServiceApplication.class, args);
 	}
 }

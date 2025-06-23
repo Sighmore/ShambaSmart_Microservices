@@ -1,0 +1,36 @@
+# Maven / Gradle
+target/
+build/
+*.jar
+*.war
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.env
+docker-compose.override.yml
+
+# Node (if applicable)
+node_modules/
+
+# Python (if applicable)
+__pycache__/
+*.pyc
+
+# Temporary files
+*~
+*.bak
+*.swp
+
+# Backup files
+*.orig

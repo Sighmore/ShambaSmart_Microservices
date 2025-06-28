@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shamba_auth
+    username: postgres
+    password: 0702Simon#@
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+jwt:
+  secret: "welcome-to-shamba-smart-farming" # secret key for signing JWT tokens
+  expiration: 1800000 # 30 min in ms
+
+#enabling the error messages to be included in the response
+  server:
+        error:
+        include-message: always
+        include-stacktrace: never
+        include-binding-errors: always
+
+#enbale INFO and DEBUG level logging
+  logging:
+        level:
+        org.springframework.web: DEBUG
+        org.springframework.security: DEBUG
+        org.hibernate.SQL: DEBUG
+        org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+

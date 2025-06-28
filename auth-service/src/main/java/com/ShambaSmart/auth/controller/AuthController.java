@@ -1,48 +1,37 @@
-package com.ShambaSmart.ShambaSmart.controller;
+package com.ShambaSmart.auth.controller;
 
-import com.ShambaSmart.payment.jwt.JwtUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.*;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.ShambaSmart.auth.dto.AuthRequest;
+import com.ShambaSmart.auth.dto.AuthResponse;
+import com.ShambaSmart.auth.dto.MessageResponse;
+import com.ShambaSmart.auth.dto.RegisterRequest;
+import com.ShambaSmart.auth.service.AuthService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
+@RequiredArgsConstructor
 public class AuthController {
-    @Autowired
-    AuthenticationManager authenticationManager;
-    @Autowired
-    UserRepository userRepository;
-    @Autowired
-    PasswordEncoder encoder;
-    @Autowired
-    JwtUtils jwtUtils;
-    @PostMapping("/signin")
-    public String authenticateUser(@RequestBody User user) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        user.getUsername(),
-                        user.getPassword()
-                )
-        );
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        return jwtUtils.generateToken(userDetails.getUsername());
+
+    private final AuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<MessageResponse> register(@RequestBody RegisterRequest registerRequest) {
+        MessageResponse response = authService.register(registerRequest);
+        return ResponseEntity.ok(response);
     }
-    @PostMapping("/signup")
-    public String registerUser(@RequestBody User user) {
-        if (userRepository.existsByUsername(user.getUsername())) {
-            return "Error: Username is already taken!";
-        }
-        // Create new user's account
-        User newUser = new User(
-                user.getUsername(),
-                encoder.encode(user.getPassword()),
-                null
-                );
-        userRepository.save(newUser);
-        return "User registered successfully!";
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest authRequest) {
+        AuthResponse response = authService.login(authRequest);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<AuthResponse> refreshToken(@RequestBody String refreshToken) {
+        AuthResponse response = authService.refreshToken(refreshToken);
+        return ResponseEntity.ok(response);
     }
 }

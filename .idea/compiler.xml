@@ -8,23 +8,28 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="farmer-service" />
-        <module name="auth-service" />
         <module name="config-service" />
         <module name="payment-service" />
         <module name="common" />
+        <module name="auth-service (1) (com.example)" />
         <module name="extension-service" />
         <module name="api-gateway" />
-        <module name="order-service" />
+        <module name="auth-service (2) (com.shambasmart)" />
         <module name="eureka-server" />
         <module name="input-service" />
         <module name="notification-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-service" target="17" />
+      <module name="order-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="auth-service" options="-parameters" />
+      <module name="auth-service (1) (com.example)" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="extension-service" options="-parameters" />

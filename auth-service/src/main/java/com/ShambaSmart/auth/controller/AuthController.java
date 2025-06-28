@@ -6,6 +6,7 @@ import com.ShambaSmart.auth.dto.AuthResponse;
 import com.ShambaSmart.auth.dto.MessageResponse;
 import com.ShambaSmart.auth.dto.RegisterRequest;
 import com.ShambaSmart.auth.service.AuthService;
+import com.ShambaSmart.auth.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthService authService;
+    private final CustomUserDetailsService userDetailsService;
 
     @PostMapping("/register")
     public ResponseEntity<MessageResponse> register(@RequestBody RegisterRequest registerRequest) {

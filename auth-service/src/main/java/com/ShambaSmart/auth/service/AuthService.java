@@ -22,11 +22,14 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtils jwtUtils;
 
+    // Method to register a new user
     public MessageResponse register(RegisterRequest request) {
         if (userRepository.existsByUsername(request.getUsername())) {
             return new MessageResponse("Error: Username is already taken!");
         }
 
+        //This builder pattern is used to create a User object
+        //which type of User object depends on your User entity class
         User user = User.builder()
                 .Username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
@@ -34,7 +37,6 @@ public class AuthService {
                         ? Set.of("ROLE_USER")
                         : request.getRoles())
                 .build();
-
         userRepository.save(user);
 
         return new MessageResponse("User registered successfully!");

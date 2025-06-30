@@ -1,10 +1,10 @@
-package com.ShambaSmart.ShambaSmart;
+package com.ShambaSmart.order;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ShambaSmartApplicationTests {
+class OrderServiceTests {
 
 	@Test
 	void contextLoads() {

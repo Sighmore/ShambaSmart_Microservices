@@ -1,0 +1,6 @@
+
+#This points to the Eureka server where the config service will register itself.
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

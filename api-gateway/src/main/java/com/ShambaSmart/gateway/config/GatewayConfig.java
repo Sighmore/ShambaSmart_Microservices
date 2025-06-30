@@ -10,32 +10,31 @@ import org.springframework.context.annotation.Configuration;
 public class GatewayConfig {
 
     /**
-     * Configures the routes for the API Gateway.
-     * Each route maps a specific path to a service URI.
-     * If you want dynamic, programmatic control, or conditional route creation vs application properties: static configuration,
-     *
-     * @param builder the RouteLocatorBuilder used to build the routes
-     * @return a RouteLocator containing the defined routes
+     * dynamic routing configuration for the gateway:
+     * utilizing LB (Load Balancer) to route requests to different services
      */
 
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("farmer-service", r -> r.path("/farmer/**")
-                        .uri("http://localhost:8081"))
+                        .uri("lb://FARMER-SERVICE"))
                 .route("extension-service", r -> r.path("/extension/**")
-                        .uri("http://localhost:8082"))
+                        .uri("lb://EXTENSION-SERVICE"))
                 .route("order-service", r -> r.path("/orders/**")
-                        .uri("http://localhost:8083"))
-                .route("payment-service",r -> r.path("/payment/**")
-                        .uri("http://localhost:8084"))
-                .route("input-service",r -> r.path("/input/**")
-                        .uri("http://localhost:8085"))
-                .route("notification-service",r -> r.path("/notification/**")
-                        .uri("http://localhost:8086"))
-                .route("Auth-service",r -> r.path("/auth/**")
-                        .uri("http://localhost:8087"))
+                        .uri("lb://ORDER-SERVICE"))
+                .route("payment-service", r -> r.path("/payment/**")
+                        .uri("lb://PAYMENT-SERVICE"))
+                .route("input-service", r -> r.path("/input/**")
+                        .uri("lb://INPUT-SERVICE"))
+                .route("notification-service", r -> r.path("/notification/**")
+                        .uri("lb://NOTIFICATION-SERVICE"))
+                .route("auth-service", r -> r.path("/auth/**")
+                        .uri("lb://AUTH-SERVICE"))
                 .build();
     }
+
+
+
 }
 

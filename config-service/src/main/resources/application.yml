@@ -1,6 +1,20 @@
+server:
+  port: 8888
 
-#This points to the Eureka server where the config service will register itself.
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Sighmore/ShambaSmart_Microservices
+          search-paths: config-service
+          clone-on-start: true
+
+
+#register the config server with Eureka
 eureka:
+  instance:
+    appname: config files
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: auth-service  # Used as part of Vault path
+  cloud:
+    vault:
+      uri: http://localhost:8200  # Vault server address
+      token: s.yourVaultTokenHere  # Replace with a real Vault token (temp for now)
+      kv:
+        enabled: true
+        backend: secret  # Default backend

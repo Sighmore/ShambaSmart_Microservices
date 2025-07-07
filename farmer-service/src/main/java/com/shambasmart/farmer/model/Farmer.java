@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.model;
+package com.shambasmart.farmer.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

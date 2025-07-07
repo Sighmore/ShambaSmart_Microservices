@@ -1,24 +1,20 @@
-package com.ShambaSmart.ShambaSmart.service;
+package com.shambasmart.farmer.service;
 
-
-import com.ShambaSmart.payment.dto.farmerDto;
-import com.ShambaSmart.payment.mapper.FarmerMapper;
-import com.ShambaSmart.payment.model.Farmer;
-import com.ShambaSmart.payment.repository.FarmerRepository;
-import jakarta.validation.Valid;
-import lombok.val;
-import org.jetbrains.annotations.NotNull;
-import org.slf4j.LoggerFactory;
+//libraries imports
+import com.shambasmart.farmer.dto.farmerDto;
+import com.shambasmart.farmer.mapper.FarmerMapper;
+import com.shambasmart.farmer.model.Farmer;
+import com.shambasmart.farmer.repository.FarmerRepository;
+import jakarta.validation.constraints.NotNull;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.logging.Logger;
 
+@Slf4j
 @Service
 public class FarmerService {
 
-    // Logger for logging information: SLF4J is used for logging in this service class
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(com.ShambaSmart.payment.service.FarmerService.class);
 
     // DI of the FarmerRepository and FarmerMapper classes
     private final FarmerRepository farmerRepository;
@@ -40,7 +36,7 @@ public class FarmerService {
             throw new IllegalArgumentException("Farmer with email " + farmerDTO.getEmail() + " already exists.");
         }
         // Convert farmerDto to Farmer entity using the FarmerMapper and save it to the database
-        logger.info("Creating farmer with email: {}");
+        log.info("Creating farmer with email: {farmerDTO.getEmail()}");
         Farmer farmer = farmerMapper.toEntity(farmerDTO);
         return farmerRepository.save(farmer);
     }
@@ -59,7 +55,7 @@ public class FarmerService {
      */
     public void deleteFarmer(Long id) {
         if (farmerRepository.findById(id).isPresent()) {
-            logger.info("Deleting farmer with ID: {}");
+            log.info("Deleting farmer with ID: {farmer.getId()}");
             farmerRepository.deleteById(id);
         }else{
             throw new IllegalArgumentException("Farmer with ID " + id + " does not exist.");

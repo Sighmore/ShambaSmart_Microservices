@@ -1,0 +1,60 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shamba_auth
+    username: postgres
+    password: 0702Simon#@
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+              format_sql: true
+
+
+
+  # Security configs
+  security:
+    oauth2:
+      resource:
+        jwt:
+          key-uri: "${auth.jwt.key-uri}"  # Retrieved from the vault
+
+# Logging
+logging:
+  level:
+    org.springframework.security: INFO
+    com.shambasmart.authservice: DEBUG
+
+# Custom app properties
+auth:
+  jwt:
+    secret: "${auth.jwt.secret}"  # Retrieved from the vault
+    expiration: "${auth.jwt.expiration}"  # Retrieved from the vault
+
+
+
+# Optional: service discovery
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+# Optional: actuator endpoints config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env
+
+  #enabling the error messages to be included in the response
+  server:
+    error:
+    include-message: always
+    include-stacktrace: never
+    include-binding-errors: always

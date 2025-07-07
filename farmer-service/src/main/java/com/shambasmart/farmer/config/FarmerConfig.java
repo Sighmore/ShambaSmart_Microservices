@@ -1,14 +1,10 @@
-package com.ShambaSmart.ShambaSmart.config;
+package com.shambasmart.farmer.config;
 
-import com.ShambaSmart.payment.jwt.JwtUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class FarmerConfig {
 
-    @Bean
-    public JwtUtils jwtUtil() {
-        return new JwtUtils();
-    }
+
 }

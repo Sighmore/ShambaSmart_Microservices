@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: farmer-service
+
+server:
+  port: 8082
+
+datasource:
+  url: jdbc:mysql://localhost:3306/farmer_db
+  username: root
+  password: 0702Simon#@
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

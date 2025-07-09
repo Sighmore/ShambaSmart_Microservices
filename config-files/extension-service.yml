@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: extension-service
+
+server:
+  port: 8083
+
+datasource:
+  url: jdbc:mysql://localhost:3306/extension_db
+  username: root
+  password: 0702Simon#@
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

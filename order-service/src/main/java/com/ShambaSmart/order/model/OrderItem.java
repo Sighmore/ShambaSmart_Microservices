@@ -1,8 +1,10 @@
 package com.ShambaSmart.order.model;
 
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
 import lombok.*;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

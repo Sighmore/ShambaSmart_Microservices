@@ -10,9 +10,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +27,7 @@ import java.util.List;
 public class FarmerController {
 
     private final FarmerService farmerService;
-    private final org.springframework.kafka.core.KafkaTemplate<String, FarmerEvent> kafkaTemplate;
+    private final KafkaTemplate<String, FarmerEvent> kafkaTemplate;
 
     @Operation(summary = "Fetch a farmer by ID", description = "Retrieves a farmer by their ID")
     @GetMapping("/{id}")

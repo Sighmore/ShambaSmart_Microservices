@@ -11,6 +11,7 @@
 * 🔧 Docker & Docker Compose for Containerized Deployment
 * 🚀 API Gateway with Centralized Routing and Security
 * 🚁 Service Discovery with Eureka
+* 💳 Payment Integration with M-Pesa (Mobile Money)
 * 📊 PostgreSQL for Persistent Data Storage
 * 💡 Designed for Scalability, Maintainability, and Real-World Production Readiness
 

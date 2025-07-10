@@ -31,7 +31,10 @@ public class PaymentServiceImpl implements PaymentService {
                 .updatedAt(LocalDateTime.now())
                 .build();
 
+
+
         payment = paymentRepository.save(payment);
+
 
         return PaymentResponseDTO.builder()
                 .paymentId(payment.getId())

@@ -5,17 +5,22 @@ import com.ShambaSmart.payment.dto.PaymentResponseDTO;
 import com.ShambaSmart.payment.model.Payment;
 import com.ShambaSmart.payment.repository.PaymentRepository;
 import com.ShambaSmart.payment.service.PaymentService;
+import com.ShambaSmart.payment.util.MpesaClient;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
 
     private final PaymentRepository paymentRepository;
+    private final MpesaClient mpesaClient;
 
     @Override
     public PaymentResponseDTO initiatePayment(PaymentRequestDTO request) {
@@ -31,6 +36,14 @@ public class PaymentServiceImpl implements PaymentService {
                 .updatedAt(LocalDateTime.now())
                 .build();
 
+        // 🔁 Call M-PESA STK Push here
+        ResponseEntity<String> mpesaResponse = mpesaClient.pushSTK(
+                request.getPhoneNumber(), // Make sure it's 2547XXXXXXXX
+                String.valueOf(request.getAmount()),
+                payment.getTransactionReference()
+        );
+
+        log.info("M-PESA STK response: {}", mpesaResponse.getBody());
 
 
         payment = paymentRepository.save(payment);

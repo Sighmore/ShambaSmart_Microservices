@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.controller;
+package com.ShambaSmart.payment.controller;
 
 import com.ShambaSmart.payment.jwt.JwtUtils;
 import com.ShambaSmart.payment.repository.UserRepository;

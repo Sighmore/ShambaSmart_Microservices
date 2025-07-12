@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.model;
+package com.ShambaSmart.payment.model;
 
 import lombok.Getter;
 import lombok.Setter;

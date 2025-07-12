@@ -41,8 +41,10 @@
 * **Spring Cloud Gateway**
 * **Eureka Discovery Server**
 * **PostgreSQL**
+* **Maven** *(Build Tool)*
 * **Docker & Docker Compose**
 * **Kafka** *(Planned for asynchronous messaging)*
+* **Ngrok** *(For local development and testing)*
 
 ---
 

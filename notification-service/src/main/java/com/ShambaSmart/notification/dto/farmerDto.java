@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.dto;
+package com.ShambaSmart.payment.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;

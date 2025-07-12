@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.mapper;
+package com.ShambaSmart.payment.mapper;
 
 import com.ShambaSmart.payment.dto.farmerDto;
 import com.ShambaSmart.payment.model.Farmer;

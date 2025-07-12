@@ -2,7 +2,6 @@ package com.ShambaSmart.payment.service;
 
 import com.ShambaSmart.payment.dto.PaymentRequestDTO;
 import com.ShambaSmart.payment.dto.PaymentResponseDTO;
-import org.springframework.stereotype.Service;
 
 
 public interface PaymentService {

@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.service;
+package com.ShambaSmart.payment.service;
 
 
 import com.ShambaSmart.payment.dto.farmerDto;

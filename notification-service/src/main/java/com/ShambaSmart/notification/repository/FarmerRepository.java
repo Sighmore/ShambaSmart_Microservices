@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.repository;
+package com.ShambaSmart.payment.repository;
 
 import com.ShambaSmart.payment.model.Farmer;
 import jakarta.validation.constraints.Email;

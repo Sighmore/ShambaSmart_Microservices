@@ -19,5 +19,8 @@ public class PaymentRequestDTO {
 
     @DecimalMin(value = "1.0", inclusive = true, message = "Amount must be at least 1.0")
     private double amount;
+
+    @NotBlank(message = "Phone number is required")
+    private String phoneNumber; // Ensure this is in the format 2547XXXXXXXX for M-Pesa
 }
 

@@ -1,10 +1,10 @@
-package com.ShambaSmart.ShambaSmart;
+package com.ShambaSmart.payment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ShambaSmartApplicationTests {
+class PaymentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

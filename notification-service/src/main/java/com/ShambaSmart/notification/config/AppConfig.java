@@ -1,4 +1,4 @@
-package com.ShambaSmart.ShambaSmart.config;
+package com.ShambaSmart.payment.config;
 
 import com.ShambaSmart.payment.jwt.JwtUtils;
 import org.springframework.context.annotation.Bean;

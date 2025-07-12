@@ -7,13 +7,18 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/payments")
 @RequiredArgsConstructor
 @Tag(name = "Payment Service", description = "Handles farmer input payments")
+@Validated
 public class PaymentController {
 
     private final PaymentService paymentService;
@@ -29,5 +34,7 @@ public class PaymentController {
     public ResponseEntity<PaymentResponseDTO> getStatus(@PathVariable Long id) {
         return ResponseEntity.ok(paymentService.getPaymentStatus(id));
     }
+
+
 }
 

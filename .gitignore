@@ -16,7 +16,6 @@ Thumbs.db
 # Ignore secret config files
 application-secrets.yml
 
-
 # Logs
 *.log
 

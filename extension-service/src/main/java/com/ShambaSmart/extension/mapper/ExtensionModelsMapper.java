@@ -2,9 +2,13 @@ package com.ShambaSmart.extension.mapper;
 
 import com.ShambaSmart.extension.dto.*;
 import com.ShambaSmart.extension.model.*;
+import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+
+@Component
 public class ExtensionModelsMapper {
 
     public AgronomyAdvice AgronomyAdviceDtoToEntity(AgronomyAdviceDto adviceDto) {
@@ -12,7 +16,9 @@ public class ExtensionModelsMapper {
             return null;
         }
 
+
         AgronomyAdvice advice = new AgronomyAdvice();
+
         advice.setCrop(adviceDto.getCrop());
         advice.setRegion(adviceDto.getRegion());
         advice.setPlantingGuide(adviceDto.getPlantingGuide());
@@ -158,7 +164,7 @@ public class ExtensionModelsMapper {
             return null;
         }
         TrainingMaterial trainingMaterial = new TrainingMaterial();
-        trainingMaterial.setId(trainingMaterialDto.getId());
+        trainingMaterial.setId(Long.valueOf(trainingMaterialDto.getId()));
         trainingMaterial.setTopic(trainingMaterialDto.getTopic());
         trainingMaterial.setTitle(trainingMaterialDto.getTitle());
         trainingMaterial.setUrl(trainingMaterialDto.getUrl());
@@ -173,7 +179,7 @@ public class ExtensionModelsMapper {
             return null;
         }
         TrainingMaterialDto trainingMaterialDto = new TrainingMaterialDto();
-        trainingMaterialDto.setId(trainingMaterial.getId());
+        trainingMaterialDto.setId(String.valueOf(trainingMaterial.getId()));
         trainingMaterialDto.setTopic(trainingMaterial.getTopic());
         trainingMaterialDto.setTitle(trainingMaterial.getTitle());
         trainingMaterialDto.setUrl(trainingMaterial.getUrl());

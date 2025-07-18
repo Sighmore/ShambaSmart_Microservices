@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class AgronomyAdviceDto {
 
 
+    private Long id;
     private String crop;
     private String region;
     private String plantingGuide;

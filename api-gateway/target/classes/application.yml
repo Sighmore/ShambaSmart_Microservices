@@ -1,6 +1,13 @@
 server:
   port: 8080
 
+#this points to the Eureka server where the API Gateway will register itself.
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
 #what is this code below for?
 #It is used to configure the API Gateway to use JWT authentication with a JWK set URI.
 #the JWK set URI is the endpoint where the JSON Web Key Set can be retrieved.

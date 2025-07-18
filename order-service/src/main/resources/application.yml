@@ -1,19 +1,26 @@
-#register the microservice with Eureka server
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+      enabled: false
 
 spring:
   application:
     name: order-service
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_db
+    username: root
+    password: 0702Simon#@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
 server:
   port: 8084
 
-datasource:
-  url: jdbc:mysql://localhost:3306/order_db
-  username: root
-  password: 0702Simon#@
-  driver-class-name: com.mysql.cj.jdbc.Driver
 

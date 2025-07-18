@@ -3,3 +3,27 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: notification-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: extension-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+server:
+  port: 8089
+
+datasource:
+  url: jdbc:mysql://localhost:3306/notification_db
+  username: root
+  password: 0702Simon#@
+  driver-class-name: com.mysql.cj.jdbc.Driver
+

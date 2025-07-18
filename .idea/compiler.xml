@@ -12,12 +12,21 @@
         <module name="payment-service" />
         <module name="common" />
         <module name="auth-service (1) (com.example)" />
-        <module name="extension-service" />
         <module name="api-gateway" />
         <module name="auth-service (2) (com.shambasmart)" />
         <module name="eureka-server" />
         <module name="input-service" />
         <module name="notification-service" />
+      </profile>
+      <profile name="Annotation profile for ShambaSmart Microservices" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar" />
+        </processorPath>
+        <module name="extension-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

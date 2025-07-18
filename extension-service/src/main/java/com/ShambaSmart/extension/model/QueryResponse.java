@@ -1,8 +1,7 @@
 package com.ShambaSmart.extension.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class QueryResponse {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String queryId;
     private String status; // e.g. RECEIVED, IN_PROGRESS, RESOLVED
     private String responseMessage;

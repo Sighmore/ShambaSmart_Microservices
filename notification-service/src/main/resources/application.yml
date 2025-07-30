@@ -17,6 +17,17 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  mail:
+        host: smtp.gmail.com
+        port: 587
+        username: inoxoftsoftwares@gmail.com
+        password: "#include<stdio.h>"
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
 
 server:
   port: 8089

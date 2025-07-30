@@ -1,6 +1,7 @@
 package com.ShambaSmart.notification.controller;
 
 import com.ShambaSmart.notification.dto.NotificationRequest;
+import com.ShambaSmart.notification.service.EmailNotificationService;
 import com.ShambaSmart.notification.service.NotificationProcessor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,4 +24,5 @@ public class NotificationController {
         processor.processNotification(request);
         return ResponseEntity.ok("Notification sent successfully");
     }
+
 }
